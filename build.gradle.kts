@@ -33,7 +33,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.Mice-Tailor-Infra"
                 artifactId = "TinyRtspKt"
-                version = "1.0.4"
+                version = "1.0.5"
             }
         }
     }
