@@ -57,7 +57,7 @@ class RtspSession(private val socket: Socket) : Runnable {
                     }
                     "SETUP" -> {
                         val transport = headers["Transport"] ?: ""
-                        val matcher = Pattern.compile("client_port=(\d+)-(\d+)").matcher(transport)
+                        val matcher = Pattern.compile("client_port=(\\d+)-(\\d+)").matcher(transport)
                         if (matcher.find()) {
                             clientRtpPort = matcher.group(1).toInt()
                         }
