@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.2.0") // Use a stable version compatible with JDK 17
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+    }
+}
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -24,7 +35,6 @@ android {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
-    // Zero other dependencies! That's the selling point.
 }
 
 afterEvaluate {
@@ -32,9 +42,9 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.cagedbird043" // Replace with your org if needed
+                groupId = "com.github.Mice-Tailor-Infra"
                 artifactId = "TinyRtspKt"
-                version = "1.0.0"
+                version = "1.0.1" // Bump version
             }
         }
     }
