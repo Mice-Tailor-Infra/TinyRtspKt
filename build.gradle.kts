@@ -1,17 +1,6 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:8.2.0") // Use a stable version compatible with JDK 17
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
-    }
-}
-
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id("com.android.library") version "8.2.0"
+    id("org.jetbrains.kotlin.android") version "1.9.22"
     id("maven-publish")
 }
 
@@ -44,7 +33,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.Mice-Tailor-Infra"
                 artifactId = "TinyRtspKt"
-                version = "1.0.1" // Bump version
+                version = "1.0.4"
             }
         }
     }
